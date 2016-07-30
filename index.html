@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Cat Clicker</title>
+</head>
+<body>
+	<h1>Im cute click me!!!</h1>
+	<img id="catImg" src="http://placekitten.com/600/800?image=1" alt="A picture of a nice kitten.">
+	<span id="count"></span>
+<script type="text/javascript">
+	var elem = document.getElementById('catImg');
+	var clickCount = 0;
+	elem.addEventListener('click', function(){
+	  clickCount++
+	  document.getElementById("count").innerHTML = "Clicks: " + clickCount;
+	}, false);
+</script>
+</body>
+</html>
