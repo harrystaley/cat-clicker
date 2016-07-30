@@ -4,15 +4,34 @@
 	<title>Cat Clicker</title>
 </head>
 <body>
-	<h1>Im cute click me!!!</h1>
-	<img id="catImg" src="http://placekitten.com/600/800?image=1" alt="A picture of a nice kitten.">
-	<span id="count"></span>
+	<span>
+		<h1>Im cute click me!!!</h1>
+		<div id="cat1Name"></div>
+		<img id="catImg1" src="http://placekitten.com/600/800?image=1" alt="A picture of a nice kitten.">
+		<div id="count1"></div>
+	</span>
+	<span>
+		<h1>Im cute click me too!!!</h1>
+		<div id="cat2Name"></div>
+		<img id="catImg2" src="http://placekitten.com/600/800?image=2" alt="A picture of a nice kitten.">
+		<div id="count2"></div>
+	</span>
 <script type="text/javascript">
-	var elem = document.getElementById('catImg');
-	var clickCount = 0;
-	elem.addEventListener('click', function(){
-	  clickCount++
-	  document.getElementById("count").innerHTML = "Clicks: " + clickCount;
+	var cat1Name = "Boots"
+	var cat2Name = "Snickers"
+	var elem1 = document.getElementById('catImg1');
+	var elem2 = document.getElementById('catImg2');
+	var clickCount1 = 0;
+	var clickCount2 = 0;
+
+	elem1.addEventListener('click', function(){
+	  clickCount1++
+	  document.getElementById("count1").innerHTML = "Clicks: " + clickCount1;
+	}, false);
+
+	elem2.addEventListener('click', function(){
+	  clickCount2++
+	  document.getElementById("count2").innerHTML = "Clicks: " + clickCount2;
 	}, false);
 </script>
 </body>
