@@ -1,38 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Cat Clicker</title>
+  <title>Cat Clicker</title>
+  <script type="text/javascript" src="script.js"></script>
 </head>
 <body>
-	<span>
-		<h1>Im cute click me!!!</h1>
-		<div id="cat1Name"></div>
-		<img id="catImg1" src="http://placekitten.com/600/800?image=1" alt="A picture of a nice kitten.">
-		<div id="count1"></div>
-	</span>
-	<span>
-		<h1>Im cute click me too!!!</h1>
-		<div id="cat2Name"></div>
-		<img id="catImg2" src="http://placekitten.com/600/800?image=2" alt="A picture of a nice kitten.">
-		<div id="count2"></div>
-	</span>
-<script type="text/javascript">
-	var cat1Name = "Boots"
-	var cat2Name = "Snickers"
-	var elem1 = document.getElementById('catImg1');
-	var elem2 = document.getElementById('catImg2');
-	var clickCount1 = 0;
-	var clickCount2 = 0;
+  <form id="catForm">
 
-	elem1.addEventListener('click', function(){
-	  clickCount1++
-	  document.getElementById("count1").innerHTML = "Clicks: " + clickCount1;
-	}, false);
+  </form>
+  <hr>
+  <div id="catArea">
 
-	elem2.addEventListener('click', function(){
-	  clickCount2++
-	  document.getElementById("count2").innerHTML = "Clicks: " + clickCount2;
-	}, false);
-</script>
+  </div>
+  <script type="text/javascript">
+    var formItems = "";
+    var catItems = "";
+
+    for (var i = 0; i < cats.length; i++ ) {
+      var inputTag = document.createElement("input");
+      inputTag.id = "catCh" + i;
+      inputTag.type = "checkbox";
+      inputTag.setAttribute('onclick', 'showCats("cat' + i + '")');
+      document.getElementById("catForm").innerHTML += cats[i].name + ": ";
+      document.getElementById("catForm").appendChild(inputTag);
+      document.getElementById("catForm").innerHTML += "<br>";
+      document.getElementById("catArea").innerHTML +=  "<div id='cat" + i + "'  style='display: none'>" + cats[i].name + "<br>" +
+      "<img id='catImg" + i +"' src='" + cats[i].imgUrl + "'>" +
+      "<div id='count" + i + "'></div></div>";
+
+    }
+
+    for (var i = 0; i < cats.length; i++ ) {
+      // document.getElementById("'catCh" + String(i) + "'").onclick =
+    }
+
+    function showCats(Id) {
+      console.log(Id + " checkbox Clicked")
+      if (document.getElementById(Id).style.display == 'none') {
+        document.getElementById(Id).style.display = 'block'
+      }
+      else {
+        document.getElementById(Id).style.display = 'none'
+      }
+    }
+
+  </script>
 </body>
 </html>
